@@ -3,15 +3,13 @@ from pygame.locals import *
 
 pygame.init()
 
-screen = pygame.display.set_mode((600,500))
+screen = pygame.display.set_mode((800,600))
 pygame.display.set_caption("T-rex")
 
 #font
 font = pygame.font.Font('retro_computer_personal_use.ttf', 20)
 
 #variables      
-
-
 
 #imgaes
 tree = pygame.image.load("images/tree.png")
@@ -39,7 +37,7 @@ run = [dino,dino,dino,dino,dino2,dino2,dino2,dino2,dino3,dino3,dino3,dino3,dino4
 
 background = pygame.image.load("images/background.png")
 
-def game_loop():
+def main():
 
     back_x = 0
     back_y = 0
@@ -67,7 +65,7 @@ def game_loop():
                         back_velocity = 4
                         game = True
                 if event.key == K_SPACE:
-                    game_loop()
+                    main()
 
 
         if(back_x == -600):
@@ -144,4 +142,4 @@ def game_loop():
         screen.blit(tree4, [tree_x + 1600,tree_y - 2])
         pygame.display.update() 
 
-game_loop()
+main()
